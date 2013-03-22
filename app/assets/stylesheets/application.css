@@ -8,3 +8,19 @@
  *= require skeleton
  *= require_tree . 
 */
+body {
+  background-color:#f2efe8;
+}
+#header {
+  text-indent:-9999px;
+  background:url("locassionsheader.png") #f2efe8 top center;
+  height:200px;
+
+}
+#sign_in {
+  height: 40px;
+  margin-top:10px;
+}
+#sign_in span {
+  float:right;
+}
