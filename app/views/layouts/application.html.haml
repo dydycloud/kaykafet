@@ -1,0 +1,64 @@
+!!!
+/[if lt IE 7 ] <html class="ie ie6" lang="en">
+/[if IE 7 ] <html class="ie ie7" lang="en">
+/[if IE 8 ] <html class="ie ie8" lang="en">
+/[if (gte IE 9)|!(IE)] <html lang="en">
+%head
+  %meta{:charset => "utf-8"}
+  %title= "Kay Ka Fèt: #{content_for?(:title) ? content_for(:title) : 'Home' }"
+  %meta{:content => "Kay Ka Fèt is a web app to track the time and place of your life events.", :name => "description"}
+  %meta{:content => "Sandy PIERRE", :name => "author"}
+  /[if lt IE 9]
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  
+  %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}
+  /
+    Favicons
+    \==================================================
+  %link{:href => "images/favicon.ico", :rel => "shortcut icon"}
+  %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}
+  %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}
+  %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}
+  = stylesheet_link_tag :application
+  = javascript_include_tag :application
+  = csrf_meta_tags
+
+%body{:"data-controller" => controller_name, :"data-action" => action_name }
+  .container
+    #sign_in.sixteen.columns
+      %a(href = "#") Sign In
+    #header.sixteen.columns
+      %h1.remove-bottom Kay Ka Fèt
+      %h5 "O la sa ka bay"
+      %p Version 0.1
+    .sixteen.columns
+      %hr
+    .one-third.column
+      %h3 What is Kay Ka Fèt?
+      %p Kay Ka Fèt is an application to track events. You define the events you want to track, you record occasions of those events. Kay Ka Fèt will help you mark the place and time, and then visualize the Events and Occasions.
+    .one-third.column
+      %h3 Why Kay Ka Fèt?
+      %p Kay Ka Fèt is just an application that i'am using with my friend to share good places. Just decide to share it!!
+    .one-third.column
+      What's the word?
+      %ul.square
+        %li
+          %strong> Jeff
+          \: "That App is really cool!!"
+        %li
+          %strong> Valerie
+          \: "Using it with my friends! Great!!"
+        %li
+          %strong> Stephane
+          \: "easy to use, nice design!!"
+        = succeed "." do
+          %a{:href => "http://www.bemonkey.net"} www.bemonkey.net.
+        Be Monkey web solution for smart Monkeys
+  /
+    JS
+    \========================================================
+  %script{:src => "javascripts/tabs.js"}
+  /
+    End Document
+    \========================================================
+    = yield 
