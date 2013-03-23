@@ -1,4 +1,8 @@
 Sossla::Application.routes.draw do
+  devise_for :users
+
+  match 'events' => 'home#index', :as => :user_root
+
   root :to => "home#index"
 
   # The priority is based upon order of creation:

@@ -26,5 +26,10 @@
 %body{:"data-controller" => controller_name, :"data-action" => action_name }
   .container
     #sign_in.sixteen.columns
-      %a(href = "#") Sign In
+      =link_to 'Sign In', new_user_session_path
+      
+      %p.notice 
+        = notice
+      %p.alert 
+        = alert
     = yield 
