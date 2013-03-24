@@ -10,13 +10,4 @@ FactoryGirl.define do
     description "This is a Test Event"
     user 
   end
-
-  factory :occasion do
-    latitude 35.1234
-    longitude -80.1234
-    occurred_at DateTime.now
-    note "Test Occasion"
-    event
-  end
-
 end

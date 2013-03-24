@@ -1,4 +1,8 @@
 Sossla::Application.routes.draw do
+  resources :events
+  
+  match 'events' => 'events#index', :as => :events
+
   devise_for :users
 
   match 'events' => 'home#index', :as => :user_root
